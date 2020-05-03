@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Водные сплавы по рекам Украины</title>
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/adapt.css"> -->
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/animate.css">
+        <script src="https://kit.fontawesome.com/ffa2cff3b5.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script>
+            new WOW().init();
+        </script>
+        
+    </head>
+</html>
+<body>
+    <header class="header">
+        <!----NAVIGATOR---->
+        <div class="page-navigation">
+            <div class="container menu">
+                <div class="overlay">
+                    <nav class="overlayMenu">
+                        <ul role="menu">
+                            <li class="menu-list"><a href="#">Главная</a></li>
+                            <li id="gallery" class="menu-list"><a href="#">Галерея</a></li>
+                            <li class="menu-list"><a href="#about">О нас</a></li>
+                            <li class="menu-list"><a href="#reviews">Отзывы</a></li>
+                            <li class="menu-list"><a href="#contacts">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="navBurger" role="navigation" id="navToggle"></div>
+            </div>
+        </div>
+        <div class="nav-logo"></div>
+        <!----/NAVIGATOR---->
+        <!-- <canvas id="canvas"></canvas> -->
+    </header>    
+    <!----SEARCH---->
+    <div class="container">
+        <div class="wow bounceInUp search_title">
+            <div class="appearSearch"></div>
+            <h1>ВЫБЕРИТЕ СВОЙ ПУТЬ</h1>
+            <h3>ОТКРОЙТЕ ДЛЯ СЕБЯ ПУТЕШЕСТВИЕ, КОТОРОЕ ВОЛНУЕТ ВАШУ ДУШУ</р>
+        </div>
+        <div class="search-box">
+            <form id="tourism" name="search">
+                <div class="wrap-search">
+                    <div class="search_title">МЕСЯЦ</div>
+                    <select required name="month" class="search_input">
+                        <option value="0" name="month"></option>
+                        <option value="april" name="month">Апрель</option>
+                        <option value="may" name="month">Май</option>
+                        <option value="june" name="month">Июнь</option>
+                        <option value="july" name="month">Июль</option>
+                        <option value="august" name="month">Август</option>
+                      </select>
+                </div>
+                <div class="wrap-search">
+                    <div class="search_title">РЕКА</div>
+                    <select  required name="location" class="search_input"> 
+                        <option value="0" name="location"></option>
+                        <option value="Tisa" name="location">Тиса</option>
+                        <option value="Cheremosh" name="location">Черемош</option>
+                        <option value="Prut" name="location">Прут</option>
+                        <option value="Bug" name="location">Южный Буг</option>
+                        <option value="Vorskla" name="location">Ворскла</option>
+                        <option value="Oril" name="location">Орель</option>
+                    </select>
+                </div>
+                <div class="wrap-search">
+                    <div class="search_title">ТИП ПОХОДА</div>
+                    <select required name="type-tourism" class="search_input"> 
+                        <option value="0" name="type-tourism"></option>
+                        <option value="beginners" name="type-tourism">Поход для новичков</option>
+                        <option value="family" name="type-tourism">Поход семейный</option>
+                        <option value="team building" name="type-tourism">Корпоративный поход</option>
+                        <option value="advanced" name="type-tourism">Поход для экстремалов</option>
+                    </select>
+                </div>
+                <div class="wrap-search">
+                    <div class="search_title">ЦЕНА, грн</div>
+                    <span class="price_title">від</span>
+                    <input type="text" name="min_price" required class="search_input input_price" data-price="from" placeholder="0"/>
+                    <span class="price_title">до</span>
+                    <input type="text" name="max_price" required class="search_input input_price" data-price="to" placeholder="5000"/>
+                </div>
+            </form>
+            <button class="button-search">Найти поход</button>
+        </div>
+    </div>
+    <!----/SEARCH---->
+    <!---MODAL_MESSEGE-->
+    <div class="modal"> 
+        <div class="modal-content content">
+          <div class="modal-header">
+            <span class="close_msg">&times;</span>
+            <p>Укажите параметры поиска</p>
+          </div>
+        </div>
+    </div>
+    <div class="modal_price"> 
+        <div class="modal-content content">
+          <div class="modal-header">
+            <span class="close_msg">&times;</span>
+            <p>Укажите сумму поиска числами </p>
+          </div>
+        </div>
+    </div>
+    <!---/MODAL_MESSEGE-->
+
+    <!-----RESULTS---->
+    <div class="container">
+        <div class="results"></div>
+    </div>
+    <!-----/RESULTS---->
+    <!----PROMO--->
+    <div class="container">
+        <div class="text-promo">
+            <div class="text-block">
+                <h2>Подбор водного похода - удобно и легко</h2>
+                <p>
+                    Все водные походы онлайн – в одном месте. Больше не нужно сравнивать предложения разных турагентств и искать, где выгоднее. ADVENTURE покажет всё и сразу. До отдыха мечты остается пару кликов: выбрать реку и месяц, тип похода, цену и изучить предложения. У нас самые крутые походы!
+                </p>
+            </div>
+            <div class="icons">
+                <div class="icon">
+                    <img src="https://dh13ufk77y9tj.cloudfront.net/assets/vinvo/ic_price-ab16b75bda7cd09f46170cbf816955d64c4af2edab87b99876fe946c29088bab.svg">
+                    <p class="icon-text">Лучшая цена похода</p>
+                </div>
+                <div class="icon">
+                    <img src="https://dh13ufk77y9tj.cloudfront.net/assets/vinvo/ic_personal-2cfa460b318c57b41b1c862f74e225bd7bd3fc616bd6689a6f1997ace3b21766.svg">
+                    <p class="icon-text">Быстрый поиск</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----/PROMO--->
+    <!----ABOUT--->
+    <div class="container_about">
+        <video data-ignore="" autoplay="" loop="" muted="" data-keepplaying="" playsinline="" id="about_fon">
+            <source src="video/fon.mp4" type="video/mp4">
+        </video>
+        <div class="container" id="about">
+            <div class="about">
+                <div id="about_title">КТО МЫ?</div>
+                <div>
+                    Привет, турист! ADVENTURE – это команда гидов, безумно любящих воду и не представляющих свою жизнь без походов. Наша цель – показать вам красивейшие места нашей страны и сделать походы поистине незабываемыми. Присоединяйтесь, будет круто! Но, осторожно. Возможен побочный эффект – вы больше не сможете не ходить в походы =))</br> 
+                    Море позитивных впечатлений и чудесных воспоминаний гарантируем!
+                </div>
+            </div>
+            <div class="wow zoomIn">
+                <video class="buttonVideoHome" controls>
+                    <source src="video/тиса3.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!----/ABOUT--->
+    <!---REVIEWS--->
+    <div id="reviews">
+        <div class="text-block">
+            <h2>Отзывы туристов</h2>
+        </div>
+        <div class="reviews">
+            <div class="review_wrapper">
+                <div class="arrow_prev arrow"></div>
+                <div class="slider_">
+                    <div class="review_item">
+                        <div class="reviews_foto foto1"></div>
+                        <div class="reviews_title">Ирина</div>
+                        <div class="reviews1">
+                            <p class="review_text">
+                                Интересные, весёлые и дружественные ребята, с которыми можно пойти хоть на край света в прям таки смысле слова. Cплавы по бурной реке, адреналин, безумно красивые пейзажи.</br>
+                                Ребята хорошо справляются со своим делом, ощущения и эмоции всегда остаются на высшем уровне.</br>
+                                Порой даже трехдневный отдых может заменить неделю отпуска!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="review_item">
+                        <div class="reviews_foto foto2"></div>
+                        <div class="reviews_title">Наталья</div>
+                        <div class="reviews2">
+                            <p class="review_text">
+                                Всем привет! Наша семья выбрала ADVENTURE для активного отдыха сына. Ему 15 лет, ученик 10 класса лицея. Родители знают, что молодежь ныне взыскательная)). Дети ценят своё время на каникулах и готовы повторить только те мероприятия, где по ИХ мнению лучше проводить время, чем компьютером, планшетом, телефоном. Летом 2018 сын был в сплаве по Ореле, а в мае 2019 был на сплаве в Карпатах.</br>
+                                Кроме позитивных эмоций, эти программы дали полезные спортивные навыки, больше уверенности самостоятельности.</br>
+                                Отмечу, что вопрос безопасности был на высоте, а для меня, как мамы, это первый критерий выбора.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrow_next arrow"></div>
+            </div>
+        </div>
+        <div class="container add_post">
+            <form name="add_post">
+                <ul>
+                    <li class="half">
+                        <input type = "text" name="url_img" placeholder="URL фото"/>
+                    </li>
+                    <li class="half">
+                        <input type = "text" name = "title" placeholder="Имя (Nickname)"/>
+                    </li>
+                    <li class="half">
+                        <textarea name = "area" placeholder="Отзыв"></textarea>
+                    </li>
+                    <li class="half">
+                        <input type="submit" name="send" value="Добавить отзыв" class="collection-add send"/>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <!---/REVIEWS--->
+    <!---CONTACTS-->
+    <div class="container" id="contacts">
+        <div class="wrap-contacts">
+            <div>
+                <div class="contact-list">Контакты:
+                    <ul>
+                        <li><a href="tel:0672222222"><img src="img/smartphone.png" alt="phone"></a></li>
+                        <li><a href="mailto:ADVENTURE@gmail.com"><img src="img/gmail.png" alt="email"></a></li>
+                        <li><a href="tel:0672222222"><img src="img/viber.png" alt="viber"></a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100003426233191" target="_blank"><img src="img/facebook.png" alt="facebook"></a></li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <ul>
+                            <li class="half">
+                                <input type="text" name="name" placeholder="Name">
+                            </li>
+                            <li class="half">
+                                <input type="email" name="email" placeholder="Email">
+                            </li>
+                            <li class="half">
+                                <textarea name="msg" placeholder="Message"></textarea>
+                            </li>
+                            <li class="half">
+                                <input class="send" type="submit" name="submit" value="Отправить"/>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---/CONTACTS-->
+    <!---gallery-foto--->
+    <div class="modal-rafting" id="gallery-foto">
+        <div class="modal-content">       
+            <div class="underContainer">
+                <div class="container">
+                    <div class="slider">
+                        <div class="slider_wrapper">
+                            <div class="slider_item">
+                                <div id="slider1"></div>
+                            </div>
+                            <div class="slider_item">
+                                <div id="slider2"></div>
+                            </div>
+                            <div class="slider_item">
+                                <div id="slider3"></div>
+                            </div>
+                            <div class="slider_item">
+                                <div id="slider4"></div>
+                            </div>
+                        </div>
+                        <a class="slider_control slider_control_prev" href="#" role="button"></a>
+                        <a class="slider_control slider_control_next slider_control_show" href="#" role="button"></a>
+                    </div>
+                </div>
+            </div>
+            <span class="close">&times;</span>
+        </div>
+    </div>
+    <!---/gallery-foto--->
+
+    <!----FOOTER---->
+    <div class= "footer">
+        <div class="mount"></div>
+    </div>
+    <!----/FOOTER---->
+    
+
+    <script src="js/custom.js"></script>
+    
+</body>
