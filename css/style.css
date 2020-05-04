@@ -530,7 +530,9 @@ div.collection-text-full {
   margin: 20px;
 }
 .arrow_prev {
-  background: url(../img/icons8-влево.png) no-repeat top left transparent;
+  background: url(../img/sprite_prev.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   display: none;
 }
 .arrow_next {
