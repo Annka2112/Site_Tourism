@@ -454,7 +454,7 @@ div.collection-text-full {
 
 /*REVIEWS*/
 #reviews {
-  background-image: url(../img/home_blog_bg.jpg);
+  background-image: url(../img/tioga-pass-yosemite-dark-mountains.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -609,11 +609,11 @@ div.collection-text-full {
   height: 600px;
 }
 #go-travel h3 {
-  color:#fff;
+  color: #fff;
   font-weight: 600;
   font-size: 2em;
   text-align: center;
-  padding-top: 5%;
+  padding-top: 9%;
 }
 /*CONTACTS*/
 #contacts h3 {
