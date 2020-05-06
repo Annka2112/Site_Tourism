@@ -90,10 +90,10 @@ function Find() {
           <div class="collection-item-outer">
             <div class="collection-item">
                 <img src="${item.src}" alt="rafting">
-                <div class="pohod-title text_padding">${item.title}</div>
+                <div class="pohod-title text_padding">${item.title}<i class="far fa-check-circle check"></i></div>
                 <div class="price">${item.price} грн</div>
                 <div class="pohod-date text_padding">
-                    <i class="fas fa-calendar-alt"></i>${item.month_date}
+                  <i class="fas fa-calendar-alt"></i>${item.month_date}
                 </div>
                 <div class="pohod-level text_padding">Уровень сложности: ${item.level}</div>
                 <div class="collection-text text_padding">
@@ -128,6 +128,16 @@ function Find() {
       console.log("что-то пошло не так", status, err);
     },
   });
+
+  $("body").on("click", ".check", function () {
+    var color = $(this).css("color");
+    if (color !== "#d4e010") {
+      $(this).css({ color: "#d4e010" });
+    } else {
+      $(this).css({ color: "#000000" });
+    }
+  });
+
   // сброс фильтров
   function Reset_filter() {
     $("#tourism")[0].reset();
