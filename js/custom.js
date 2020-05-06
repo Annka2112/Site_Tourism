@@ -151,7 +151,7 @@ $("body").on("click", ".show", ShowText);
 
 //-----------------ОТЗЫВЫ -----------------------------------------------------
 var index = 0;
-
+$(document).ready(GetReviews());
 $(document).ready(Reviews_hide());
 
 function Reviews_hide() {
@@ -190,6 +190,8 @@ function moveLeft() {
 }
 
 // добавление отзыва
+$(".collection-add").on("click", AddBlock);
+
 /*---------Add post Button---------*/
 function AddBlock(e) {
   e.preventDefault();
@@ -210,9 +212,56 @@ function AddBlock(e) {
   $(".slider_").prepend(newBlock);
 
   Reviews_hide();
+  SetReview(scr_img, title_text, date, area); // запись в localStorage
 }
 
-$(".collection-add").on("click", AddBlock);
+function SetReview(scr_img, title_text, date, area) {
+  var dataReview = [
+    {
+      avatar: scr_img,
+      title: title_text,
+      date: date,
+      text: area,
+    },
+  ];
+  console.log("dataReview-->", dataReview);
+
+  if (localStorage.getItem("myReviews") !== null) {
+    var posts = localStorage.getItem("myReviews");
+    var LastReview = JSON.parse(posts);
+    var newReview = LastReview.concat(dataReview);
+
+    var storeArr = JSON.stringify(newReview);
+    localStorage.setItem("myReviews", storeArr);
+  } else {
+    var storeArr = JSON.stringify(dataReview);
+    localStorage.setItem("myReviews", storeArr);
+  }
+}
+
+/*-----Get from Localstorage-------*/
+function GetReviews() {
+  var posts = localStorage.getItem("myReviews");
+  if (posts !== null) {
+    var dataReview = JSON.parse(posts);
+    console.log(dataReview);
+
+    dataReview.forEach(function (item, i) {
+      var newBlock = `<div class="review_item">
+      <img src="${item.avatar}" class="reviews_foto" alt="">
+      <div class="reviews_title">${item.title}</div>
+      <div class="postDate">${item.date}</div>
+      <div class="reviews1">
+          <p class="review_text">${item.text}</p>
+      </div>
+    </div>`;
+      $(".slider_").prepend(newBlock);
+      Reviews_hide();
+    });
+  } else {
+    console.log("no data");
+  }
+}
 
 //------------------------------------------
 

@@ -726,7 +726,7 @@ div.collection-text-full {
   margin-top: 20px;
 }
 .slider_item div {
-  height: 500px;
+  height: 600px;
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -795,22 +795,47 @@ div.collection-text-full {
 }
 
 #slider1 {
-  background-image: url(../img/gory_ozero.jpg);
+  background-image: url(../img/тиса02.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 #slider2 {
-  background-image: url(../img/otrazhenie_boloto.jpg);
+  background-image: url(../img/тиса04.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 #slider3 {
-  background-image: url(../img/kanada.jpg);
+  background-image: url(../img/черемош_прут2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 #slider4 {
-  background-image: url(../img/ozero_gory.jpg);
+  background-image: url(../img/черемош12.JPG);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#slider5 {
+  background-image: url(../img/южный_Буг15.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#slider6 {
+  background-image: url(../img/псёл2.JPG);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#slider7 {
+  background-image: url(../img/орель2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#slider8 {
+  background-image: url(../img/ворскла01.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#slider9 {
+  background-image: url(../img/ворскла03.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
