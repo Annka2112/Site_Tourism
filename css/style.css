@@ -13,7 +13,6 @@ body {
   background-image: url(../img/Mountains_Sunset.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 730px;
 }
 /*NAVIGATOR*/
 .page-navigation {
@@ -148,6 +147,9 @@ li {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+.search_input option:hover {
+  background-color: #d4e010;
+}
 .input_price {
   width: 7em;
   padding-left: 10px;
@@ -162,7 +164,7 @@ input {
 .location-title :hover {
   background-color: #d4e010;
 }
-.button-search {
+.knob {
   width: 200px;
   background: #d4e010;
   padding: 10px;
@@ -276,6 +278,9 @@ input {
   font-size: 1em;
   margin-left: 20px;
 }
+.chosen {
+  color: #d4e010;
+}
 .price {
   grid-column: 3;
   grid-row: 1;
@@ -347,6 +352,7 @@ div.collection-text-small {
 div.collection-text-full {
   height: 100%;
   white-space: inherit;
+  margin-bottom: 2%;
 }
 .no-result {
   font-weight: 600;
@@ -458,7 +464,7 @@ div.collection-text-full {
 
 /*REVIEWS*/
 #reviews {
-  background-image: url(../img/tioga-pass-yosemite-dark-mountains.jpg);
+  background-image: url(../img/gory-obrabotka.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;

@@ -1,3 +1,5 @@
+var HScreen = screen.availHeight + "px";
+$(".header").css({ height: HScreen });
 //Проверка на заполнение пользователем всех фильтров поиска и вывод модального окна
 function Check() {
   var filter_item = $("select option:selected"); // все выбранные select
@@ -58,12 +60,6 @@ function Find() {
     _max_price = +$("input[name~='max_price']").val();
   }
 
-  //Очищение результатов от предыдущих поисков
-  function Clear() {
-    if ($(".results").has(".collection-item-outer")) {
-      $(".results").empty();
-    }
-  }
   Clear();
 
   $.ajax({
@@ -129,18 +125,15 @@ function Find() {
     },
   });
 
-  $("body").on("click", ".check", function () {
-    var color = $(this).css("color");
-    if (color !== "#d4e010") {
-      $(this).css({ color: "#d4e010" });
-    } else {
-      $(this).css({ color: "#000000" });
-    }
-  });
-
   // сброс фильтров
   function Reset_filter() {
     $("#tourism")[0].reset();
+  }
+}
+//Очищение результатов от предыдущих поисков
+function Clear() {
+  if ($(".results").has(".collection-item-outer")) {
+    $(".results").empty();
   }
 }
 
@@ -158,6 +151,50 @@ var ShowText = function (e) {
   }
 };
 $("body").on("click", ".show", ShowText);
+
+// Добавление в избранное
+$("body").on("click", ".check", function () {
+  $(this).toggleClass("chosen");
+  if ($(this).hasClass("chosen")) {
+    var favorite_ = $(".chosen").closest(".collection-item-outer").html();
+    setFavorite(favorite_);
+  }
+});
+/*--------Хранение в Localstorage--------*/
+function setFavorite(favorite_) {
+  var dataFavorite = [
+    {
+      data: favorite_,
+    },
+  ];
+  if (localStorage.getItem("myFavorites") !== null) {
+    var favorites = localStorage.getItem("myFavorites");
+    var LastFavorite = JSON.parse(favorites);
+    var newFavorite = LastFavorite.concat(dataFavorite);
+
+    var storeArr = JSON.stringify(newFavorite);
+    localStorage.setItem("myFavorites", storeArr);
+  } else {
+    var storeArr = JSON.stringify(dataFavorite);
+    localStorage.setItem("myFavorites", storeArr);
+  }
+}
+
+$(".button-favorite").on("click", getFavorite);
+function getFavorite() {
+  Clear();
+  var favorites = localStorage.getItem("myFavorites");
+  if (favorites !== null) {
+    var dataFavorite = JSON.parse(favorites);
+
+    dataFavorite.forEach(function (item) {
+      var newBlock = `<div class="collection-item-outer">${item.data}</div>`;
+      $(".results").append(newBlock);
+    });
+  } else {
+    console.log("no data");
+  }
+}
 
 //-----------------ОТЗЫВЫ -----------------------------------------------------
 var index = 0;
