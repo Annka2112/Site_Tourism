@@ -595,22 +595,6 @@ div.collection-text-full {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
 }
-.send {
-  width: 200px;
-  background: #d4e010;
-  padding: 10px;
-  height: 45px;
-  margin-bottom: 5%;
-  border-radius: 3px;
-  outline: none;
-  border: none;
-  color: #fff;
-  box-shadow: -1px 1px 6px #2f2f2f;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-}
 
 #go-travel {
   background-image: url(../img/skala-les-vodopad-priroda.jpg);
