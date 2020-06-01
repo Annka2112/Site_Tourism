@@ -1,5 +1,5 @@
 var HScreen = screen.availHeight + "px";
-$(".header").css({ height: HScreen });
+/* $(".header").css({ height: HScreen }); */
 //Проверка на заполнение пользователем всех фильтров поиска и вывод модального окна
 function Check() {
   var filter_item = $("select option:selected"); // все выбранные select
