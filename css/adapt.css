@@ -1,7 +1,7 @@
 /* Smartphones (вертикальная и горизонтальная ориентация) ----------- */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .container {
-    max-width: 313px;
+    max-width: 318px;
   }
   .header {
     height: 400px;
@@ -262,7 +262,7 @@
   }
   /*ABOUT*/
   #about_fon {
-    display: none;
+    width: auto;
   }
   #about_title {
     width: 5em;
@@ -274,7 +274,325 @@
     line-height: 1.2em;
   }
   .buttonVideoHome {
-    height: 250px;
+    height: 240px;
   }
   /*REVIEWS*/
+  .review_wrapper {
+    width: 320px;
+    margin: 0 auto;
+  }
+  .slider_ {
+    width: 250px;
+  }
+  .review_item {
+    width: 240px;
+    height: auto;
+  }
+  .review_text {
+    font-size: 0.9em;
+    line-height: 1.2em;
+  }
+  .arrow {
+    width: 35px;
+    height: 35px;
+  }
+  .add_post ul li.half {
+    width: 90%;
+    margin: 15px;
+  }
+  #go-travel {
+    height: 250px;
+  }
+  #go-travel h3 {
+    font-size: 1.5em;
+  }
+
+  /*CONTACTS*/
+  .contact-list img {
+    width: 35px;
+  }
+  /*GALLERY foto*/
+  .slider_item div {
+    height: 300px;
+  }
+  /*FOOTER*/
+  .footer {
+    height: 70px;
+  }
+  .mount {
+    height: 100px;
+    top: -30px;
+  }
+}
+
+/* Smartphones (вертикальная и горизонтальная ориентация) ----------- */
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .container {
+    max-width: 476px;
+  }
+  .header {
+    height: 400px;
+  }
+  /*NAVIGATOR*/
+  .page-navigation {
+    min-height: 65px;
+  }
+  .nav-logo {
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+  }
+  .contact {
+    display: none;
+  }
+  .page-navigation a {
+    line-height: 1em;
+  }
+
+  .navBurger {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    background: #000000;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-clip: content-box;
+    width: 1.875em;
+    height: 1.5em;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+  }
+  .navBurger:before,
+  .navBurger:after {
+    content: "";
+    position: absolute;
+    background: #000000;
+    height: 2px;
+    width: 100%;
+    right: 0;
+    will-change: rotate;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .navBurger:before {
+    top: -10px;
+  }
+  .navBurger:after {
+    bottom: -10px;
+    width: 90%;
+  }
+  .navBurger.active {
+    background: transparent;
+    background-clip: content-box;
+  }
+  .navBurger.active:before {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    top: 0;
+    background: #eee;
+    width: 110%;
+  }
+  .navBurger.active:after {
+    bottom: 0;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    background: #eee;
+    width: 110%;
+  }
+
+  .overlay {
+    position: fixed;
+    background: #1b1919;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transform-origin: right top;
+    transform-origin: right top;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    visibility: hidden;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+  }
+  .overlay.open {
+    opacity: 0.9;
+    visibility: visible;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  .overlay.open li {
+    display: block;
+    -webkit-animation: fadeInRight 0.4s cubic-bezier(0.42, 0.83, 0.7, 1.5)
+      forwards;
+    animation: fadeInRight 0.4s cubic-bezier(0.42, 0.83, 0.7, 1.5) forwards;
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+    -webkit-transform: rotate(-7deg);
+    transform: rotate(-7deg);
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+  }
+  .overlay.open li:nth-of-type(2) {
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+  }
+  .overlay.open li:nth-of-type(3) {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+  }
+  .overlay.open li:nth-of-type(4) {
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+  }
+  .overlay.open li:nth-of-type(5) {
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+  }
+  .overlayMenu {
+    position: absolute;
+    text-align: right;
+    right: 10vw;
+    bottom: 20vw;
+    top: 10vh;
+  }
+  .overlayMenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    height: 100%;
+  }
+  .overlayMenu ul li {
+    display: block;
+    position: relative;
+    opacity: 0;
+    width: 100%;
+  }
+  .overlayMenu ul li a {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px 40px 10px 40px;
+    margin: 5px 0;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .overlayMenu ul li a:hover,
+  .overlayMenu ul li a:active,
+  .overlayMenu ul li a:focus {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+    padding-left: 80px;
+    outline: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .locked {
+    overflow: hidden;
+  }
+
+  @-webkit-keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      left: 50px;
+    }
+    100% {
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      left: 50px;
+    }
+    100% {
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+  }
+  /*SEARCH*/
+  .appearSearch {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .search_title h1 {
+    font-size: 2.5em;
+    line-height: 1.2em;
+  }
+  .search_title {
+    font-size: 1em;
+  }
+  .price_title {
+    font-size: 0.9em;
+  }
+  .search_input {
+    width: 10em;
+    height: 2em;
+  }
+  .knob {
+    width: 180px;
+    height: 35px;
+    font-size: 1em;
+    margin: 15px;
+  }
+  /*MODAL MESSAGE*/
+  .modal-header {
+    width: 300px;
+    height: 100px;
+  }
+  .close_msg {
+    right: 1%;
+  }
+
+  /*PROMO*/
+  .text-block h2 {
+    font-size: 1.8em;
+    line-height: 2em;
+  }
+  .text-block p {
+    font-size: 1em;
+    line-height: 1.2em;
+  }
+  .icon-text {
+    font-size: 1em;
+  }
+  .icon img {
+    width: 70px;
+    height: 70px;
+  }
+  /*ABOUT*/
+  #about_fon {
+    width: auto;
+  }
+  #about_title {
+    width: 10em;
+    font-size: 2em;
+    line-height: 2em;
+  }
+  .about div {
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+  .buttonVideoHome {
+    height: 275px;
+  }
 }
