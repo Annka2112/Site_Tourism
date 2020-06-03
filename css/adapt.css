@@ -328,7 +328,7 @@
 /* Smartphones (вертикальная и горизонтальная ориентация) ----------- */
 @media only screen and (min-width: 481px) and (max-width: 767px) {
   .container {
-    max-width: 476px;
+    max-width: 477px;
   }
   .header {
     height: 400px;
@@ -584,8 +584,8 @@
     width: auto;
   }
   #about_title {
-    width: 10em;
-    font-size: 2em;
+    width: 3em;
+    font-size: 1.8em;
     line-height: 2em;
   }
   .about div {
@@ -594,5 +594,94 @@
   }
   .buttonVideoHome {
     height: 275px;
+  }
+  /*REVIEWS*/
+  .review_wrapper {
+    width: 480px;
+    margin: 0 auto;
+  }
+  .slider_ {
+    width: 410px;
+  }
+  .review_item {
+    width: 400px;
+    height: auto;
+  }
+  .arrow {
+    width: 35px;
+    height: 35px;
+  }
+  .add_post ul li.half {
+    width: 90%;
+    margin: 15px;
+  }
+  #go-travel {
+    height: 250px;
+  }
+  /*CONTACTS*/
+  .contact-list img {
+    width: 55px;
+  }
+  /*GALLERY foto*/
+  .slider_item div {
+    height: 470px;
+  }
+  /*FOOTER*/
+  .footer {
+    height: 90px;
+  }
+  .mount {
+    height: 140px;
+    top: -50px;
+  }
+}
+
+/* iPad  ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    max-width: 763px;
+  }
+  .header {
+    height: 500px;
+  }
+  /*SEARCH*/
+  .appearSearch {
+    width: 100%;
+    margin: 0 auto;
+  }
+  /*ABOUT*/
+  #about_fon {
+    width: auto;
+  }
+  /*REVIEWS*/
+  .review_wrapper {
+    width: 764px;
+    margin: 0 auto;
+  }
+  .slider_ {
+    width: 700px;
+  }
+  .review_item {
+    width: 640px;
+    height: auto;
+  }
+  .arrow {
+    width: 50px;
+    height: 50px;
+  }
+  .add_post ul li.half {
+    width: 70%;
+    margin: 15px;
+  }
+  #go-travel {
+    height: 440px;
+  }
+  /*FOOTER*/
+  .footer {
+    height: 90px;
+  }
+  .mount {
+    height: 140px;
+    top: -50px;
   }
 }
