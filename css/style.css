@@ -13,6 +13,7 @@ body {
   background-image: url(../img/Mountains_Sunset.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  height: 500px;
 }
 /*NAVIGATOR*/
 .page-navigation {
