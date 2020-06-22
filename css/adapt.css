@@ -323,6 +323,55 @@
     height: 100px;
     top: -30px;
   }
+  /*--RESULTS----*/
+  .collection-item {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: auto auto auto auto auto;
+  }
+  .collection-item img {
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 15em;
+    margin: 0 auto 3vh;
+  }
+  .text_padding {
+    padding: 1vw;
+  }
+  .pohod-title {
+    grid-column: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    font-size: 1.2em;
+  }
+  .price {
+    grid-column: 2;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    font-size: 1.2em;
+  }
+  .pohod-date {
+    grid-column: 1;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  .pohod-level {
+    grid-column: 1;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    font-size: 0.9em;
+  }
+  .collection-text {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 5;
+    font-size: 0.9em;
+    line-height: 1.2em;
+  }
+  .collection-text img {
+    width: 10em;
+  }
 }
 
 /* Smartphones (вертикальная и горизонтальная ориентация) ----------- */
@@ -634,6 +683,55 @@
     height: 140px;
     top: -50px;
   }
+  /*--RESULTS----*/
+  .collection-item {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: auto auto auto auto auto;
+  }
+  .collection-item img {
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 15em;
+    margin: 0 auto 2vh;
+  }
+  .text_padding {
+    padding: 1vw;
+  }
+  .pohod-title {
+    grid-column: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    font-size: 1.2em;
+  }
+  .price {
+    grid-column: 2;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    font-size: 1.2em;
+  }
+  .pohod-date {
+    grid-column: 1;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  .pohod-level {
+    grid-column: 1;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    font-size: 0.9em;
+  }
+  .collection-text {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 5;
+    font-size: 0.9em;
+    line-height: 1.2em;
+  }
+  .collection-text img {
+    width: 10em;
+  }
 }
 
 /* iPad  ----------- */
@@ -683,5 +781,15 @@
   .mount {
     height: 140px;
     top: -50px;
+  }
+  /*--RESULTS----*/
+  .collection-item img {
+    width: 15em;
+  }
+  .pohod-title {
+    font-size: 1.2em;
+  }
+  .price {
+    font-size: 1.2em;
   }
 }

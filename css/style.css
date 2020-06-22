@@ -66,19 +66,41 @@ li {
   width: 300px;
   margin: 0 auto;
 }
-.menu-scroll {
+.top {
+  right: 5px;
+  bottom: 10%;
+  width: auto;
+  z-index: 222;
+  cursor: pointer;
   position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 1;
-  opacity: 0;
-  background-color: black;
+  background: none;
 }
-.menu-scroll:hover {
-  opacity: 1;
+.top i {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  font-size: 80px;
+  display: block;
+  color: #8f95a3;
 }
-
+.top i:hover {
+  color: #d4e010;
+}
+.top .text {
+  width: 80px;
+  height: 20px;
+  color: #8f95a3;
+  display: block;
+  font-size: 14px;
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+.menu-knob {
+  display: none;
+}
 /*SEARCH*/
 .appearSearch {
   background: url(/img/fseach.png);
@@ -338,20 +360,8 @@ div.collection-text-small {
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
-.show {
-  width: 130px;
-  background: #d4e010;
-  padding: 10px;
-  height: 45px;
-  border-radius: 3px;
-  outline: none;
-  border: none;
-  color: #fff;
-  -webkit-box-shadow: -1px 1px 6px #2f2f2f;
-  box-shadow: -1px 1px 6px #2f2f2f;
-}
 div.collection-text-full {
-  height: 100%;
+  height: max-content;
   white-space: inherit;
   margin-bottom: 2%;
 }
@@ -622,7 +632,7 @@ div.collection-text-full {
   color: white;
   padding: 1em;
   margin: 0 auto;
-  width: fit-content;
+  width: max-content;
 }
 .contact-list ul {
   margin-top: 15px;

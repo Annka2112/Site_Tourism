@@ -1,5 +1,28 @@
 var HScreen = screen.availHeight + "px";
 /* $(".header").css({ height: HScreen }); */
+// Кнопка Вверх
+$(function () {
+  var ScreenVisibility = window.innerHeight; // высота видимости экрана
+
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > ScreenVisibility) {
+      $(".top").css({ display: "block" });
+    } else {
+      $(".top").css({ display: "none" });
+    }
+  });
+});
+$(".top").on("click", function (e) {
+  e.preventDefault();
+  $("html, body").animate({ scrollTop: 0 }, "300");
+});
+$(".top").on("mouseover", function () {
+  $(".text").css({ color: "#d4e010" });
+});
+$(".top").on("mouseout", function () {
+  $(".text").css({ color: "#8f95a3" });
+});
+
 //Проверка на заполнение пользователем всех фильтров поиска и вывод модального окна
 function Check() {
   var filter_item = $("select option:selected"); // все выбранные select
@@ -98,14 +121,14 @@ function Find() {
                         ${item.desribe}</br>
                         </br>
                         <p>В стоимость включено:</br>
-                        - обеспечение водным снаряжением - плавсредства, каски, весла, жилеты</br>
-                        - обеспечение бивуачным снаряжением - тент, котлы, горелки, палатки, спальники, коврики и др.</br>
-                        - питание на маршруте (утро - вечер - горячая кухня, обед перекус, первый и последний день - 2-х разовое)</br>
-                        - опытные инструктора</br>
-                        - страховка</br>
-                        - автомобиль сопровождения для перевозки вещей
+                        - обеспечение водным снаряжением - плавсредства, каски, весла, жилеты;</br>
+                        - обеспечение бивуачным снаряжением - тент, котлы, горелки, палатки, спальники, коврики и др.;</br>
+                        - питание на маршруте (утро - вечер - горячая кухня, обед перекус, первый и последний день - 2-х разовое);</br>
+                        - опытные инструктора;</br>
+                        - страховка;</br>
+                        - автомобиль сопровождения для перевозки вещей.
                     </div>
-                <button class="show">Подробнее</button>                     
+                <button class="show knob">Подробнее</button>                     
                 </div>
             </div>
           </div>`;
@@ -467,19 +490,6 @@ var multiItemSlider = (function () {
 })();
 
 //-------------------------------------------------------------
-
-// Скрытие меню при скролле и появление при наведение мышкой
-/* $(function () {
-  var ScreenVisibility = window.innerHeight; // высота видимости экрана
-
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > ScreenVisibility) {
-      $(".page-navigation").addClass("menu-scroll");
-    } else {
-      $(".page-navigation").removeClass("menu-scroll");
-    }
-  });
-}); */
 
 // Меню-бургер для маленьких экранов/телефонов
 $("#navToggle").click(function () {
