@@ -98,9 +98,6 @@ li {
   font-weight: bold;
   text-align: center;
 }
-.menu-knob {
-  display: none;
-}
 /*SEARCH*/
 .appearSearch {
   background: url(/img/fseach.png);

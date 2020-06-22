@@ -202,6 +202,9 @@
       transform: rotate(0deg);
     }
   }
+  .top {
+    opacity: 0;
+  }
   /*SEARCH*/
   .appearSearch {
     width: 100%;
@@ -578,6 +581,9 @@
       transform: rotate(0deg);
     }
   }
+  .top {
+    opacity: 0;
+  }
   /*SEARCH*/
   .appearSearch {
     width: 100%;
@@ -741,6 +747,9 @@
   }
   .header {
     height: 500px;
+  }
+  .top i {
+    font-size: 60px;
   }
   /*SEARCH*/
   .appearSearch {
